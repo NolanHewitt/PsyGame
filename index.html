@@ -17,13 +17,13 @@
 
 <!--Beginning of Script-->
 <script>
-//Array of possible computer choices/variable for guesses left
+//Variable for guesses left
 let guesses = 5;
 document.getElementById("guesses").innerHTML = guesses;
 console.log(guesses);
-
-const computerChoices = ["q", "w", "e", "r", "t", "y", "u", "i", "o", "p", "a", "s", "d", "f", "g", "h", "j", "k", "l", "z", "x", "c", "v", "b", "n", "m"];
-const computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
+//Array of possible computer choices and random choice for game
+let computerChoices = ["q", "w", "e", "r", "t", "y", "u", "i", "o", "p", "a", "s", "d", "f", "g", "h", "j", "k", "l", "z", "x", "c", "v", "b", "n", "m"];
+let computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
 console.log(computerGuess);
 
 //User input controls
