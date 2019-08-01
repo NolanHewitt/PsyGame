@@ -1,10 +1,48 @@
 <!DOCTYPE html>
 <html>
 <head>
-
-
+<meta charset="UTF-8">
+<title>Psychic Game</title>
 </head>
 <body>
+<!--Game Intruction Text-->
+<h2>Try to guess the letter that the computer has guessed!</h2>
+
+<h1 id="win"></h1>
+
+<h4>Guesses Left</h4>
+<p id=guesses></p>
+
+<p id="guess1"></p>
+
+<!--Beginning of Script-->
+<script>
+//Array of possible computer choices/variable for guesses left
+let guesses = 5;
+document.getElementById("guesses").innerHTML = guesses;
+console.log(guesses);
+
+const computerChoices = ["q", "w", "e", "r", "t", "y", "u", "i", "o", "p", "a", "s", "d", "f", "g", "h", "j", "k", "l", "z", "x", "c", "v", "b", "n", "m"];
+const computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
+console.log(computerGuess);
+
+//User input controls
+ // This function is run whenever the user presses a key.
+ document.onkeyup = function(event) 
+ {
+// Determines which key was pressed.
+let userGuess = event.key.toLowerCase();
+console.log(userGuess);
+
+//Decreases guesses left
+
+if (userGuess === computerGuess) {document.getElementById("win").innerHTML = "You win!"}
+else (document.getElementById("guess1").innerHTML = userGuess)
+}
+
+//Compare user's guess to computer's choice
+</script>
+<!--End of Script-->
 
 
 </body>
