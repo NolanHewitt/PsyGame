@@ -3,46 +3,17 @@
 <head>
 <meta charset="UTF-8">
 <title>Psychic Game</title>
+
+<script src="./assets/javascript/game.js"></script>
 </head>
 <body>
 <!--Game Intruction Text-->
-<h2>Try to guess the letter that the computer has guessed!</h2>
+<h2>Try to guess the same letter that the computer has choosen!</h2>
 
 <h3 id="win">Wins: 0</h3>
 <h3 id="lose">Loses: 0</h3>
 <h3 id=guesses>Guesses Left: 5</h3>
 <h3 id="guess1">Guesses: </h3>
-
-<!--Beginning of Script-->
-<script>
-//Variable for guesses left
-let guesses = 5;
-let wins = 1;
-let losses = 1;
-//Array of possible computer choices and random choice for game
-let computerChoices = ["q", "w", "e", "r", "t", "y", "u", "i", "o", "p", "a", "s", "d", "f", "g", "h", "j", "k", "l", "z", "x", "c", "v", "b", "n", "m"];
-let computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
-console.log(computerGuess);
-
-//User input controls
- // This function is run whenever the user presses a key.
- document.onkeyup = function(event) 
- {
-// Determines which key was pressed.
-let userGuess = event.key.toLowerCase();
-console.log(userGuess);
-
-//Win Conditions
-if (userGuess === computerGuess) {document.getElementById("win").innerHTML = "Wins: " + wins++}
-//Write the letter that was guessed if it's incorrect
-else (document.getElementById("guesses").innerHTML ="Guesses Left: " + guesses--) && ((document.getElementById("guess1").innerHTML = "Guesses: " + userGuess))
-
-//Lose Condition
-if (guesses === 0) {document.getElementById("lose").innerHTML = "Losses: " + losses++}
-}
-</script>
-<!--End of Script-->
-
 
 </body>
 </html>
